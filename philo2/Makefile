@@ -1,6 +1,4 @@
-# Makefile
 NAME = philo
-
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -pthread
 RM = rm -f
