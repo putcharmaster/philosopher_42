@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils_2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sanhwang <sanhwang@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/21 16:54:55 by sanhwang          #+#    #+#             */
-/*   Updated: 2024/11/22 18:25:35 by sanhwang         ###   ########.fr       */
+/*   Created: 2024/11/22 21:43:15 by sanhwang          #+#    #+#             */
+/*   Updated: 2024/11/22 21:53:02 by sanhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,39 +42,18 @@ long long	get_time(void)
 	gettimeofday(&tv, NULL);
 	return ((tv.tv_sec * 1000) + (tv.tv_usec / 1000));
 }
-void    ft_usleep(int ms)
+
+void	ft_usleep(int ms)
 {
-    long long   start;
-    long long   elapsed;
+	long long	start;
+	long long	elapsed;
 
-    start = get_time();
-    while (1)
-    {
-        elapsed = get_time() - start;
-        if (elapsed >= ms)
-            break;
-        usleep(500); 
-    }
-}
-
-void	print_status(t_data *data, int id, char *status)
-{
-	pthread_mutex_lock(&data->write_mutex);
-	if (!data->dead || !strcmp(status, "died"))
-		printf("%lld %d %s\n", get_time() - data->start_time, id, status);
-	pthread_mutex_unlock(&data->write_mutex);
-}
-
-void	clean_exit(t_data *data)
-{
-	int	i;
-
-	i = -1;
-	while (++i < data->num_philos)
-		pthread_mutex_destroy(&data->forks[i]);
-	pthread_mutex_destroy(&data->write_mutex);
-	pthread_mutex_destroy(&data->death_mutex);
-	pthread_mutex_destroy(&data->meal_mutex);
-	free(data->forks);
-	free(data->philos);
+	start = get_time();
+	while (1)
+	{
+		elapsed = get_time() - start;
+		if (elapsed >= ms)
+			break ;
+		usleep(500);
+	}
 }

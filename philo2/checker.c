@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sanhwang <sanhwang@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 14:00:39 by sanhwang          #+#    #+#             */
-/*   Updated: 2024/11/22 14:17:07 by sanhwang         ###   ########.fr       */
+/*   Created: 2024/11/12 14:00:39 by sanhwang          #+#    #+#             */
+/*   Updated: 2024/11/22 21:26:19 by sanhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
-
 
 int	is_valid_int(char *str)
 {

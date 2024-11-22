@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sanhwang <sanhwang@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/21 16:45:56 by sanhwang          #+#    #+#             */
-/*   Updated: 2024/11/22 18:26:23 by sanhwang         ###   ########.fr       */
+/*   Created: 2024/11/11 16:45:56 by sanhwang          #+#    #+#             */
+/*   Updated: 2024/11/22 21:53:12 by sanhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,15 @@
 # include <pthread.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include <string.h>
 # include <sys/time.h>
 # include <unistd.h>
 
-struct s_data;
+struct	s_data;
 
 typedef struct s_philo
 {
 	int				id;
 	int				meals_eaten;
-
 	long long		last_meal_time;
 	pthread_mutex_t	*left_fork;
 	pthread_mutex_t	*right_fork;
@@ -56,12 +54,15 @@ int					init_data(t_data *data, int argc, char **argv);
 int					init_mutexes(t_data *data);
 int					init_philos(t_data *data);
 
-/* utils.c */
+/* utils_1.c */
+void				clean_exit(t_data *data);
+int					ft_strcmp(char const *s1, char const *s2);
+void				print_status(t_data *data, int id, char *status);
+
+/* utils_2.c */
 int					ft_atoi(const char *str);
 long long			get_time(void);
 void				ft_usleep(int ms);
-void				print_status(t_data *data, int id, char *status);
-void				clean_exit(t_data *data);
 
 /* routine.c */
 void				*philo_routine(void *arg);
@@ -70,7 +71,6 @@ void				philo_sleep(t_philo *philo);
 void				philo_think(t_philo *philo);
 
 /* monitor.c */
-// int					check_death(t_philo *philo);
 int					check_all_deaths(t_data *data);
 int					check_meals(t_data *data);
 

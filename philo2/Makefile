@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: sanhwang <sanhwang@student.42luxembourg    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/11/22 18:26:47 by sanhwang          #+#    #+#              #
-#    Updated: 2024/11/22 18:26:48 by sanhwang         ###   ########.fr        #
+#    Created: 2024/11/12 18:26:47 by sanhwang          #+#    #+#              #
+#    Updated: 2024/11/22 21:42:55 by sanhwang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -pthread
 RM = rm -f
 
-SRCS = main.c init.c utils.c routine.c monitor.c checker.c
+SRCS = main.c init.c routine.c monitor.c checker.c utils_1.c utils_2.c
 
 OBJS = $(SRCS:.c=.o)
 
