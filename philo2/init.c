@@ -6,7 +6,7 @@
 /*   By: sanhwang <sanhwang@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 16:54:51 by sanhwang          #+#    #+#             */
-/*   Updated: 2024/11/21 22:53:56 by sanhwang         ###   ########.fr       */
+/*   Updated: 2024/11/22 18:22:54 by sanhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,22 @@ int	init_data(t_data *data, int argc, char **argv)
 	return (0);
 }
 
-int	init_mutexes(t_data *data)
+int init_mutexes(t_data *data)
 {
-	int	i;
+    int i;
 
-	data->forks = malloc(sizeof(pthread_mutex_t) * data->num_philos);
-	if (!data->forks)
-		return (1);
-	i = -1;
-	while (++i < data->num_philos)
-		if (pthread_mutex_init(&data->forks[i], NULL))
-			return (1);
-	if (pthread_mutex_init(&data->write_mutex, NULL)
-		|| pthread_mutex_init(&data->death_mutex, NULL))
-		return (1);
-	return (0);
+    data->forks = malloc(sizeof(pthread_mutex_t) * data->num_philos);
+    if (!data->forks)
+        return (1);
+    i = -1;
+    while (++i < data->num_philos)
+        if (pthread_mutex_init(&data->forks[i], NULL))
+            return (1);
+    if (pthread_mutex_init(&data->write_mutex, NULL)
+        || pthread_mutex_init(&data->death_mutex, NULL)
+        || pthread_mutex_init(&data->meal_mutex, NULL))
+        return (1);
+    return (0);
 }
 
 int	init_philos(t_data *data)

@@ -1,9 +1,21 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: sanhwang <sanhwang@student.42luxembourg    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/11/22 18:26:47 by sanhwang          #+#    #+#              #
+#    Updated: 2024/11/22 18:26:48 by sanhwang         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = philo
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -pthread
 RM = rm -f
 
-SRCS = main.c init.c utils.c routine.c monitor.c
+SRCS = main.c init.c utils.c routine.c monitor.c checker.c
 
 OBJS = $(SRCS:.c=.o)
 
