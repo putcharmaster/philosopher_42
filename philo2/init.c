@@ -6,7 +6,7 @@
 /*   By: sanhwang <sanhwang@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 16:54:51 by sanhwang          #+#    #+#             */
-/*   Updated: 2024/11/22 19:29:09 by sanhwang         ###   ########.fr       */
+/*   Updated: 2024/11/25 12:00:17 by sanhwang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	init_data(t_data *data, int argc, char **argv)
 	data->time_to_eat = ft_atoi(argv[3]);
 	data->time_to_sleep = ft_atoi(argv[4]);
 	if (argc == 6)
-		data->must_eat_count = ft_atoi(argv[5]);
+		data->must_eat_count = ft_atoi(argv[5]) + 1;
 	else
 		data->must_eat_count = -1;
 	data->dead = 0;
